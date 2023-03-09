@@ -1,4 +1,6 @@
 import * as THREE from 'three'
+import gsap from 'gsap'
+
 
 // Canvas
 const canvas = document.querySelector('canvas.webgl')
@@ -6,65 +8,41 @@ const canvas = document.querySelector('canvas.webgl')
 // Scene
 const scene = new THREE.Scene()
 
-/**
- * Objects
- */
+// Object
 const geometry = new THREE.BoxGeometry(1, 1, 1)
 const material = new THREE.MeshBasicMaterial({ color: 0xff0000 })
 const mesh = new THREE.Mesh(geometry, material)
 scene.add(mesh)
 
-// Position
-mesh.position.z = 0
-mesh.position.y = 0
-mesh.position.x = 0
-
-// Scale
-mesh.scale.x = 2
-mesh.scale.y = 0.5
-mesh.scale.z = 0.5
-
-// Rotation
-mesh.rotation.y = Math.PI * 0.25
-
-
-/**
- * Sizes
- */
+// Sizes
 const sizes = {
     width: 800,
     height: 600
 }
 
-/**
- * Camera
- */
+// Camera
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height)
 camera.position.z = 3
-camera.position.y = 1
-camera.position.x = 1
-
 scene.add(camera)
 
-camera.lookAt(mesh.position)
-
-const axesHelper = new THREE.AxesHelper(3)
-scene.add(axesHelper)
-
-/**
- * Renderer
- */
+// Renderer
 const renderer = new THREE.WebGLRenderer({
     canvas: canvas
 })
 renderer.setSize(sizes.width, sizes.height)
+renderer.setPixelRatio( window.devicePixelRatio)
 renderer.render(scene, camera)
 
-// Tick Function for frames
-const tick = () =>
-{
-    console.log('tick');
+// GSAP
+gsap.to(mesh.position, { duration: 1, delay: 1, x: 2 })
 
+// Tick Function
+const tick = () => {
+
+    // Render
+    renderer.render(scene, camera)
+
+    // Call tick again on the next frame
     window.requestAnimationFrame(tick)
 }
 tick()
