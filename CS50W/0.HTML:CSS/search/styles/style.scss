@@ -1,0 +1,199 @@
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+    min-height: 100vh;
+    max-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+}
+
+header{
+    height: 5vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: right;
+
+    padding: 2px;
+
+    position: relative;
+    img{
+        height: 4vh;
+        margin: 3px 1vw;
+    }
+    #header-google-logo{
+        height: 2.5vh;
+        position: absolute;
+        left: 0;
+    }
+    a{
+        color: gray;
+        margin: 3px 4vw;
+    }
+    a:link, a:visited{
+        text-decoration: none;
+    }
+    a:hover{
+        text-decoration: underline;
+    }
+
+}
+
+#search{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 25vh;
+    margin-bottom: 20vh;
+    
+    img{
+        max-width: 300px;
+        margin: 20px;
+    }
+    /*Images Logo*/
+    #images_logo{
+        width: 300px;
+        height: 120px;
+        position: relative;
+        #images_logo_text{
+            color: #4285f4;
+            font-size: 18px;
+            position: absolute;
+            bottom: -10%;
+            left: 78%;
+        }
+    }
+
+    form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        #query{
+            width: 45%;
+            min-width: 300px;
+            max-width: 548px;
+            padding: 10px;
+
+            margin-top: 2vh;
+            margin-bottom: 2vh;
+
+            border: 1px solid #dfe1e5;
+            border-radius: 25px;
+        }
+        #query:hover{
+            box-shadow: 1px 1px 7px 2px lightgray;
+        }
+
+        #buttons{
+            width: 300px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            input{
+                padding: 14px;
+                border-style: none;
+                margin: 5px;
+                border-radius: 5px;
+            }
+            #btn1{
+                margin-right: 10px;
+            }
+            #btn2{
+                margin-left: 10px;
+            }
+
+            input:hover{
+                border: 1px solid #dfe1e5;
+                box-shadow: 1px 1px lightgray;
+            }
+        }
+    }
+
+    #instruction_advanced_search{
+        position: absolute;
+        top:35%;
+        left:5%;
+    }
+
+    #advanced_form{
+        display:flex;
+        flex-direction: row;
+        justify-content: left;
+        align-items: center;
+
+        width: 90%;
+
+        position: relative;
+
+        font-size: small;
+
+        #labels_advanced_form{
+            display: flex;
+            flex-direction: column;
+            justify-content: left;
+            width: max-content;
+            margin-right: 30px;
+        }
+        #inputs_advanced_form{
+            display: flex;
+            flex-direction: column;
+            justify-content: left;
+
+            width: 80%;
+        }
+
+        label, input{
+            margin-top: 1vh;
+            margin-bottom: 1vh;
+        }
+        input{
+            width: 100%;
+            max-width: 600px;
+            min-width: 100px;
+            height: 25px;
+            border: 1px solid #dfe1e5;
+
+        }
+        label{
+            height: 32px;
+        }
+
+        #buttons_advanced_form{
+            position: absolute;
+            bottom: -40%;
+            left:65%;
+            
+            input{
+                height: 35px;
+                padding-left: 10px;
+                padding-right: 10px;
+                background-color: #4285f4;
+                color: white;
+                font-weight: bold;
+                font-size: small;
+            }
+            input:hover{
+                box-shadow: -1px -1px  lightgray;
+                background-color: #3e7ee5;
+            }
+        }
+    }
+}
+
+#advanced-title {
+    width: 100%;
+
+    color: #d93025;
+    font-size: large;
+
+    margin-top: 10px;
+    padding: 30px;
+
+    border-bottom: 1px solid lightgray;
+}
