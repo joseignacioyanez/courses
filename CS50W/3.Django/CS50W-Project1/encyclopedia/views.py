@@ -1,11 +1,10 @@
 from django.shortcuts import render, redirect
 from django.core.files import File
 
-from random import randrange
-
 from markdown2 import Markdown
 
 from . import util
+import secrets
 
 
 def index(request):
@@ -93,6 +92,6 @@ def random(request):
 
     entries = util.list_entries()
 
-    randomIndex = randrange(len(entries)-1)
+    randomIndex = secrets.SystemRandom().randrange(len(entries)-1)
 
     return redirect("entryShow", entryName=entries[randomIndex])
